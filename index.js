@@ -34,18 +34,18 @@ function desencriptar() {
     let parrafo = document.getElementById("parrafo");
     let muñeco = document.getElementById("muñeco");
 
-    let textoDescifrado = texto
-        .replace(/ufat/gi, "u")
-        .replace(/ober/gi, "o")
-        .replace(/ai/gi, "a")
+    let textoCifrado = texto
+        .replace(/enter/gi, "e")
         .replace(/imes/gi, "i")
-        .replace(/enter/gi, "e");
+        .replace(/ai/gi, "a")
+        .replace(/ober/gi, "o")
+        .replace(/ufat/gi, "u");
 
     if (texto.length !== 0) {
-        document.getElementById("texto").value = textoDescifrado;
+        document.getElementById("texto").value = textoCifrado;
         tituloMensaje.textContent = "Texto desencriptado con éxito";
         parrafo.textContent = "";
-        textoEncriptado = false;
+        
     } else {
         muñeco.src = "./img/muñeco.png";
         tituloMensaje.textContent = "Ningún mensaje fue encontrado";
