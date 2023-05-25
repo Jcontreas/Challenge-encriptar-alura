@@ -34,18 +34,18 @@ function desencriptar() {
     let parrafo = document.getElementById("parrafo");
     let muñeco = document.getElementById("muñeco");
 
-    let textoCifrado = texto
-        .replace(/enter/gi, "e")
-        .replace(/imes/gi, "i")
-        .replace(/ai/gi, "a")
+    let textoDescifrado = texto
+        .replace(/ufat/gi, "u")
         .replace(/ober/gi, "o")
-        .replace(/ufat/gi, "u");
+        .replace(/ai/gi, "a")
+        .replace(/imes/gi, "i")
+        .replace(/enter/gi, "e");
 
     if (texto.length !== 0) {
-        document.getElementById("texto").value = textoCifrado;
+        document.getElementById("texto").value = textoDescifrado;
         tituloMensaje.textContent = "Texto desencriptado con éxito";
         parrafo.textContent = "";
-        
+        textoEncriptado = false;
     } else {
         muñeco.src = "./img/muñeco.png";
         tituloMensaje.textContent = "Ningún mensaje fue encontrado";
@@ -53,4 +53,3 @@ function desencriptar() {
         swal("¡Error!", "Por favor ingresa un texto", "warning");
     }
 }
-
